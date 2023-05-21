@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 interface TodoInterface {
   name: string;
   month: string[2];
@@ -10,6 +10,10 @@ interface Props {
 }
 
 export default function TodoItem({ todo }: Props) {
+  const [showViewMore, setShowViewMore] = useState(false);
+  const toggleViewMore = () => {
+    setShowViewMore(!showViewMore);
+  };
   return (
     <div className="todo-item-container background-white">
       <div className="todo-item-container-top-half">
@@ -21,8 +25,17 @@ export default function TodoItem({ todo }: Props) {
           </span>
         </p>
       </div>
-      <div className="background-light-grey details-box">
-        <p className="text-purple bold ">+ View more details</p>
+      <div
+        onClick={() => {
+          toggleViewMore();
+        }}
+        className="background-light-grey details-box"
+        tabIndex={0}
+      >
+        <p className="text-purple bold">
+          {showViewMore ? <span>-</span> : <span>+</span>} View more details
+        </p>
+        {showViewMore && <p className="p-1">{todo.description}</p>}
       </div>
     </div>
   );

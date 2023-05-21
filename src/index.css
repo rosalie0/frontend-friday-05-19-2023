@@ -81,6 +81,9 @@ p {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.p-1 {
+  padding: 1rem;
+}
 
 .add-button {
   cursor: pointer;
@@ -124,6 +127,7 @@ p {
 
 .details-box {
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .details-box-header {
