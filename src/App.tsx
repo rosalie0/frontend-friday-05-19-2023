@@ -31,17 +31,23 @@ function App() {
   // if not clicked, show homepage
   if (showHome)
     return (
-      <div className="background-purple">
-        <h1>My TodoList App</h1>
-        {todos.map((todo, index) => (
-          <TodoItem key={index} todo={todo} />
-        ))}
-        <PlusButton toggleShowHome={toggleShowHome} />
+      <div className="app background-purple">
+        <div className="container home-container">
+          <h1 className="text-white ">My TodoList App</h1>
+          {todos.map((todo, index) => (
+            <TodoItem key={index} todo={todo} />
+          ))}
+          <PlusButton toggleShowHome={toggleShowHome} />
+        </div>
       </div>
     );
 
   // else show add new task component
-  return <AddNewTaskPage toggleShowHome={toggleShowHome} />;
+  return (
+    <div className="app">
+      <AddNewTaskPage toggleShowHome={toggleShowHome} />;
+    </div>
+  );
 }
 
 export default App;
