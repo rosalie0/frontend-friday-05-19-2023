@@ -1,5 +1,20 @@
 import React from "react";
 import "../App.css";
-export default function PlusButton() {
-  return <button className="add-button">+</button>;
+
+interface Props {
+  togglePlusButtonClicked: Function;
+}
+export default function PlusButton({ togglePlusButtonClicked }: Props) {
+  return (
+    <div className="circle-button-container">
+      <button
+        className="add-button circle-button"
+        onClick={() => {
+          togglePlusButtonClicked();
+        }}
+      >
+        +
+      </button>
+    </div>
+  );
 }
