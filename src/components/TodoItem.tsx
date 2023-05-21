@@ -26,10 +26,10 @@ export default function TodoItem({ todo }: Props) {
         </p>
       </div>
       <div
+        className="details-box background-light-grey"
         onClick={() => {
           toggleViewMore();
         }}
-        className="background-light-grey details-box"
         tabIndex={0}
       >
         <p className="text-purple bold">

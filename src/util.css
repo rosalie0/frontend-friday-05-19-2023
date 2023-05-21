@@ -1,0 +1,42 @@
+/* Self made classes that mimic tailwind */
+
+.display-block {
+  display: block;
+}
+
+.background-purple {
+  background-color: #bb27a7;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.background-light-grey {
+  background-color: lightgrey;
+}
+
+.text-purple {
+  color: #bb27a7;
+}
+
+.text-white {
+  color: white;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.py-half {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}

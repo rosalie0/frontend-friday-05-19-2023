@@ -1,0 +1,11 @@
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.task-form-description {
+  width: 350px;
+  height: 300px;
+}

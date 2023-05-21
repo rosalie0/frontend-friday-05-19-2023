@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./App.css";
 import PlusButton from "./components/PlusButton";
 import AddNewTaskPage from "./components/AddNewTaskPage";
 import TodoItem from "./components/TodoItem";
-
+import "./Home.css";
+import "./util.css";
 const dummyData = [
   {
     name: "Take Bruno to vet",

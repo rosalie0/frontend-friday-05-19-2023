@@ -1,0 +1,38 @@
+.home-container {
+  padding-top: 3rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-header {
+  padding: 2rem;
+  text-align: center;
+}
+
+.todo-item-container {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.todo-item-container-top-half {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.details-box {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.details-box-header {
+  color: #bb27a7;
+  font-weight: bold;
+}
