@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const monthOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const dateOptions = [1, 2];
+const monthOptions = Array.from(Array(12).keys(), (n) => n + 1);
+const dateOptions = Array.from(Array(31).keys(), (n) => n + 1);
 interface Props {
   toggleShowHome: Function;
 }
@@ -15,13 +15,13 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
   return (
     <div className="background-white">
       <h1>Add a new task</h1>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="task-form">
         <div>
           <label className="text-purple" htmlFor="todo-name">
             Task name
           </label>
           <input
-            className="text-white background-purple"
+            className="text-white background-purple display-block"
             type="text"
             value={newTodo.name}
             name="todo-name"
@@ -42,25 +42,34 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
             name="todo-date"
             value={newTodo.date}
           >
-            {/* opts */}
+            {dateOptions.map((num) => (
+              <option value={num}>{num}</option>
+            ))}
           </select>
         </div>
         <div>
+          <label
+            className="text-purple display-block"
+            htmlFor="todo-description "
+          >
+            Description
+          </label>
           <input
-            className="text-white background-purple"
+            className="text-white background-purple task-form-description"
             type="text"
             name="todo-description"
           />
         </div>
+        <button
+          type="submit"
+          className="add-button"
+          onClick={() => {
+            toggleShowHome();
+          }}
+        >
+          Add Task
+        </button>
       </form>
-      <button
-        className="add-button"
-        onClick={() => {
-          toggleShowHome();
-        }}
-      >
-        Add Task
-      </button>
     </div>
   );
 }

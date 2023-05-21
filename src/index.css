@@ -9,6 +9,10 @@ h1 {
   margin: 0;
 }
 
+.display-block {
+  display: block;
+}
+
 .background-purple {
   background-color: #bb27a7;
 }
@@ -56,6 +60,17 @@ h1 {
   font-size: 3rem;
 }
 
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.task-form-description {
+  width: 350px;
+  height: 300px;
+}
 .details-box {
   background-color: grey;
 }
