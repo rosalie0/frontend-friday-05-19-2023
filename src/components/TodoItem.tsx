@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 interface TodoInterface {
   name: string;
   month: string[2];
