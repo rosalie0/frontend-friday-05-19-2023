@@ -7,9 +7,24 @@ interface Props {
   toggleShowHome: Function;
 }
 export default function AddNewTaskPage({ toggleShowHome }: Props) {
-  const [newTodo, setNewTodo] = useState({ name: "", description: "" });
+  const [newTodo, setNewTodo] = useState({
+    name: "",
+    month: "",
+    date: "",
+    description: "",
+  });
 
-  const submitHandler = (event) => {
+  const changeHandler = (
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const value = event.target.value;
+    console.log(event.target.name, value);
+    setNewTodo({ ...newTodo, [event.target.name]: value });
+  };
+  const submitHandler = (event: React.FormEvent) => {
+    console.log("submitting: ", newTodo);
     event.preventDefault();
   };
 
@@ -19,51 +34,53 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
       <form onSubmit={submitHandler} className="task-form">
         {/* Task Name */}
         <div>
-          <label className="py-half" htmlFor="todo-name">
+          <label className="py-half" htmlFor="name">
             Task name
           </label>
           <input
             className="text-white background-purple display-block text-input"
             type="text"
+            onChange={changeHandler}
             value={newTodo.name}
-            name="todo-name"
+            name="name"
           />
         </div>
         {/* Date */}
         <div>
-          <label htmlFor="todo-month" className="display-block py-half">
+          <label htmlFor="month" className="display-block py-half">
             Due Date
           </label>
           <div className="date-container">
             <select
               className="number-select text-white background-purple"
-              name="todo-month"
-              value={newTodo.month}
+              name="month"
+              onChange={changeHandler}
             >
               {monthOptions.map((num) => (
-                <option value={num}>{num}</option>
+                <option key={num}>{num}</option>
               ))}
             </select>
             <select
               className="number-select text-white background-purple"
-              name="todo-date"
-              value={newTodo.date}
+              name="date"
+              onChange={changeHandler}
             >
               {dateOptions.map((num) => (
-                <option value={num}>{num}</option>
+                <option key={num}>{num}</option>
               ))}
             </select>
           </div>
         </div>
         {/* Description */}
         <div>
-          <label className="display-block py-half " htmlFor="todo-description">
+          <label className="display-block py-half" htmlFor="description">
             Description
           </label>
           <textarea
             rows={8}
             className="text-white background-purple task-form-description  description-input"
-            name="todo-description"
+            name="description"
+            onChange={changeHandler}
           />
         </div>
         {/* Submit Button */}
