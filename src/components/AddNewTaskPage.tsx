@@ -1,11 +1,20 @@
 import React from "react";
-
-export default function AddNewTaskPage() {
+interface Props {
+  toggleShowHome: Function;
+}
+export default function AddNewTaskPage({ toggleShowHome }: Props) {
   return (
-    <div>
-      <h1>Add a new task</h1>
-      {/* form */}
-      <button className="add-button">Add Task</button>
+    <div className="background-purple">
+      <h1 className="text-white">Add a new task</h1>
+      {/* form goes here */}
+      <button
+        className="add-button"
+        onClick={() => {
+          toggleShowHome();
+        }}
+      >
+        Add Task
+      </button>
     </div>
   );
 }

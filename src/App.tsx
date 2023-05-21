@@ -5,25 +5,23 @@ import AddNewTaskPage from "./components/AddNewTaskPage";
 
 function App() {
   // state to control if we show homepage or the 'add new task' screen.
-  const [plusButtonClicked, setPlusButtonClicked] = useState(false);
-  const togglePlusButtonClicked = () => {
+  const [showHome, setShowHome] = useState(true);
+  const toggleShowHome = () => {
     console.log("toggled");
-    setPlusButtonClicked(!plusButtonClicked);
+    setShowHome(!showHome);
   };
 
   // if not clicked, show homepage
-  if (!plusButtonClicked)
+  if (showHome)
     return (
-      <>
-        <div className="container">
-          <h1>My TodoList App</h1>
-          <PlusButton togglePlusButtonClicked={togglePlusButtonClicked} />
-        </div>
-      </>
+      <div className="background-purple">
+        <h1>My TodoList App</h1>
+        <PlusButton toggleShowHome={toggleShowHome} />
+      </div>
     );
 
   // else show add new task component
-  return <AddNewTaskPage />;
+  return <AddNewTaskPage toggleShowHome={toggleShowHome} />;
 }
 
 export default App;

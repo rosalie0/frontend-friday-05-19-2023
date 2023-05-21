@@ -2,15 +2,15 @@ import React from "react";
 import "../App.css";
 
 interface Props {
-  togglePlusButtonClicked: Function;
+  toggleShowHome: Function;
 }
-export default function PlusButton({ togglePlusButtonClicked }: Props) {
+export default function PlusButton({ toggleShowHome }: Props) {
   return (
     <div className="circle-button-container">
       <button
         className="add-button circle-button"
         onClick={() => {
-          togglePlusButtonClicked();
+          toggleShowHome();
         }}
       >
         +
