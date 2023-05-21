@@ -5,12 +5,13 @@ const monthOptions = Array.from(Array(12).keys(), (n) => n + 1);
 const dateOptions = Array.from(Array(31).keys(), (n) => n + 1);
 interface Props {
   toggleShowHome: Function;
+  addTodo: Function;
 }
-export default function AddNewTaskPage({ toggleShowHome }: Props) {
+export default function AddNewTaskPage({ toggleShowHome, addTodo }: Props) {
   const [newTodo, setNewTodo] = useState({
     name: "",
-    month: "",
-    date: "",
+    month: "01",
+    date: "01",
     description: "",
   });
 
@@ -20,12 +21,20 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
     >
   ) => {
     const value = event.target.value;
-    console.log(event.target.name, value);
+    //console.log(event.target.name, value);
     setNewTodo({ ...newTodo, [event.target.name]: value });
   };
   const submitHandler = (event: React.FormEvent) => {
     console.log("submitting: ", newTodo);
+
+    // preface the month or date with a 0 if its a single digit
+    if (newTodo.month.length < 2) newTodo.month = "0" + newTodo.month;
+    if (newTodo.date.length < 2) newTodo.date = "0" + newTodo.date;
+
     event.preventDefault();
+    // add this todo onto the todos.
+    addTodo(newTodo);
+    toggleShowHome(); // return us to homepage
   };
 
   return (
@@ -43,6 +52,7 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
             onChange={changeHandler}
             value={newTodo.name}
             name="name"
+            required
           />
         </div>
         {/* Date */}
@@ -81,15 +91,13 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
             className="text-white background-purple task-form-description  description-input"
             name="description"
             onChange={changeHandler}
+            required
           />
         </div>
         {/* Submit Button */}
         <button
           type="submit"
           className="add-button p-1 bold submit-task-button"
-          onClick={() => {
-            toggleShowHome();
-          }}
         >
           Add Task
         </button>

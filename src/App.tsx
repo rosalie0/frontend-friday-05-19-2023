@@ -21,10 +21,12 @@ const dummyData = [
 
 function App() {
   const [todos, setTodos] = useState(dummyData);
+  const addTodo = (newTodo: any) => {
+    setTodos([...todos, newTodo]);
+  };
   // state to control if we show homepage or the 'add new task' screen.
   const [showHome, setShowHome] = useState(true);
   const toggleShowHome = () => {
-    console.log("toggled");
     setShowHome(!showHome);
   };
 
@@ -46,7 +48,7 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <AddNewTaskPage toggleShowHome={toggleShowHome} />
+        <AddNewTaskPage toggleShowHome={toggleShowHome} addTodo={addTodo} />
       </div>
     </div>
   );
