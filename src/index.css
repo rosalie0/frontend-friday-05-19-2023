@@ -28,7 +28,7 @@ p {
   font-size: 2rem;
   background-color: aquamarine;
   border: 2px dashed black;
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 
 /* Fixed to bottom right of viewport */

@@ -45,7 +45,7 @@ function App() {
   // else show add new task component
   return (
     <div className="app">
-      <AddNewTaskPage toggleShowHome={toggleShowHome} />;
+      <AddNewTaskPage toggleShowHome={toggleShowHome} />
     </div>
   );
 }
