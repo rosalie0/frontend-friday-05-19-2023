@@ -14,8 +14,8 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
   };
 
   return (
-    <div className="background-white">
-      <h1>Add a new task</h1>
+    <div className="task-form-container">
+      <h1 className="text-center">Add a new task</h1>
       <form onSubmit={submitHandler} className="task-form">
         {/* Task Name */}
         <div>
@@ -31,43 +31,45 @@ export default function AddNewTaskPage({ toggleShowHome }: Props) {
         </div>
         {/* Date */}
         <div>
-          <label htmlFor="todo-month" className="display-block">
+          <label htmlFor="todo-month" className="display-block py-half">
             Due Date
           </label>
-          <select
-            className="number-select text-white background-purple"
-            name="todo-month"
-            value={newTodo.month}
-          >
-            {monthOptions.map((num) => (
-              <option value={num}>{num}</option>
-            ))}
-          </select>
-          <select
-            className="number-select text-white background-purple"
-            name="todo-date"
-            value={newTodo.date}
-          >
-            {dateOptions.map((num) => (
-              <option value={num}>{num}</option>
-            ))}
-          </select>
+          <div className="date-container">
+            <select
+              className="number-select text-white background-purple"
+              name="todo-month"
+              value={newTodo.month}
+            >
+              {monthOptions.map((num) => (
+                <option value={num}>{num}</option>
+              ))}
+            </select>
+            <select
+              className="number-select text-white background-purple"
+              name="todo-date"
+              value={newTodo.date}
+            >
+              {dateOptions.map((num) => (
+                <option value={num}>{num}</option>
+              ))}
+            </select>
+          </div>
         </div>
         {/* Description */}
         <div>
           <label className="display-block py-half " htmlFor="todo-description">
             Description
           </label>
-          <input
-            className="text-white background-purple task-form-description text-input description-input"
-            type="text"
+          <textarea
+            rows={8}
+            className="text-white background-purple task-form-description  description-input"
             name="todo-description"
           />
         </div>
         {/* Submit Button */}
         <button
           type="submit"
-          className="add-button p-1 bold"
+          className="add-button p-1 bold submit-task-button"
           onClick={() => {
             toggleShowHome();
           }}

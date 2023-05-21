@@ -32,7 +32,7 @@ function App() {
   if (showHome)
     return (
       <div className="app background-purple">
-        <div className="container home-container">
+        <div className="container">
           <h1 className="text-white ">My TodoList App</h1>
           {todos.map((todo, index) => (
             <TodoItem key={index} todo={todo} />
@@ -45,7 +45,9 @@ function App() {
   // else show add new task component
   return (
     <div className="app">
-      <AddNewTaskPage toggleShowHome={toggleShowHome} />
+      <div className="container">
+        <AddNewTaskPage toggleShowHome={toggleShowHome} />
+      </div>
     </div>
   );
 }

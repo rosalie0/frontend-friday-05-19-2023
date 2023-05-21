@@ -1,33 +1,46 @@
+.task-form-container {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .task-form {
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-items: left;
-  min-width: 350px;
   width: 100%;
   background-color: orange;
   padding: 2rem;
 }
 
-.task-form-description {
-  /* width: 350px;
-  height: 300px; */
+.text-input {
+  font-size: 1rem;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+}
+
+.date-container {
+  display: flex;
+  gap: 1rem;
 }
 
 .number-select {
   font-size: 2rem;
   width: 5rem;
-  margin: 1rem;
   border: none;
 }
 
-.text-input {
+.description-input {
   font-size: 1rem;
   width: 100%;
   border: none;
 }
 
-.description-input {
-  height: 6rem;
+.submit-task-button {
+  width: 80%;
+  align-self: center;
+  /* place-self: center; */
 }

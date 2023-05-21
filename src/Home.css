@@ -1,17 +1,3 @@
-.home-container {
-  padding-top: 3rem;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.home-header {
-  padding: 2rem;
-  text-align: center;
-}
-
 .todo-item-container {
   border-radius: 0.5rem;
   display: flex;
