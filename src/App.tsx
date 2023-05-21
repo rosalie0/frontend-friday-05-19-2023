@@ -33,8 +33,8 @@ function App() {
     return (
       <div className="background-purple">
         <h1>My TodoList App</h1>
-        {todos.map((todo) => (
-          <TodoItem todo={todo} />
+        {todos.map((todo, index) => (
+          <TodoItem key={index} todo={todo} />
         ))}
         <PlusButton toggleShowHome={toggleShowHome} />
       </div>
