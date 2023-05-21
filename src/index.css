@@ -43,3 +43,12 @@ body {
   /* padding: 0.5rem 1rem 0.5rem 1rem; */
   font-size: 3rem;
 }
+
+.details-box {
+  background-color: grey;
+}
+
+.details-box-header {
+  color: #bb27a7;
+  font-weight: bold;
+}
