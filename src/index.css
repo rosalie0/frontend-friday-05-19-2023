@@ -12,6 +12,13 @@ h1 {
 .background-purple {
   background-color: #bb27a7;
 }
+.background-white {
+  background-color: white;
+}
+
+.text-purple {
+  color: #bb27a7;
+}
 
 .text-white {
   color: white;
